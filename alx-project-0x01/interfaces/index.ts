@@ -74,7 +74,11 @@ export interface UserData {
   };
 }
 
+
+// UserData can just alias UserProps (or you can redefine it similarly)
+export type UserData = UserProps;
+
+// ✅ REQUIRED: UserModalProps must match this format
 export interface UserModalProps {
   onClose: () => void;
-  onSubmit: (user: UserData) => void;
-}
+  onSubmit: (post: UserProps) => void; // This is the missing line
